@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace LessAbstractClient\Authorizer;
 
-use LessAbstractClient\Requester;
+use LessAbstractClient\Requester\Requester;
 use RuntimeException;
 
 final class LessIdentityAuthorizer implements Authorizer

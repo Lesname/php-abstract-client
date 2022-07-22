@@ -8,11 +8,10 @@ use Psr\SimpleCache\InvalidArgumentException;
 
 final class CacheAuthorizer implements Authorizer
 {
-    private const CACHE_KEY = 'client.authorizer';
-
     public function __construct(
         private readonly Authorizer $proxy,
         private readonly CacheInterface $cache,
+        private readonly string $key,
         private readonly int $expire,
     ) {}
 
@@ -23,12 +22,12 @@ final class CacheAuthorizer implements Authorizer
      */
     public function getAuthorization(): string
     {
-        $authorization = $this->cache->get(self::CACHE_KEY);
+        $authorization = $this->cache->get($this->key);
 
         if (!is_string($authorization)) {
             $authorization = $this->proxy->getAuthorization();
 
-            $this->cache->set(self::CACHE_KEY, $authorization, $this->expire);
+            $this->cache->set($this->key, $authorization, $this->expire);
         }
 
         return $authorization;
