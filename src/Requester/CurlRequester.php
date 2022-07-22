@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient;
+namespace LessAbstractClient\Requester;
 
 use CurlHandle;
 use JsonException;
 use LessAbstractClient\Authorizer\Authorizer;
 use LessAbstractClient\Exception\FailedRequest;
-use LessAbstractClient\Response\DataResponse;
-use LessAbstractClient\Response\EmptyResponse;
-use LessAbstractClient\Response\Response;
+use LessAbstractClient\Requester\Response\DataResponse;
+use LessAbstractClient\Requester\Response\EmptyResponse;
+use LessAbstractClient\Requester\Response\Response;
 use RuntimeException;
 
 final class CurlRequester implements Requester
