@@ -5,12 +5,12 @@ namespace LessAbstractClient\Requester;
 
 use CurlHandle;
 use JsonException;
+use RuntimeException;
 use LessAbstractClient\Authorizer\Authorizer;
-use LessAbstractClient\Exception\FailedRequest;
+use LessAbstractClient\Requester\Response\Response;
 use LessAbstractClient\Requester\Response\DataResponse;
 use LessAbstractClient\Requester\Response\EmptyResponse;
-use LessAbstractClient\Requester\Response\Response;
-use RuntimeException;
+use LessAbstractClient\Requester\Exception\FailedRequest;
 
 final class CurlRequester implements Requester
 {
