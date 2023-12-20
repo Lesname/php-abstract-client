@@ -5,12 +5,12 @@ namespace LessAbstractClient\Requester;
 
 use CurlHandle;
 use JsonException;
+use RuntimeException;
 use LessAbstractClient\Authorizer\Authorizer;
-use LessAbstractClient\Exception\FailedRequest;
+use LessAbstractClient\Requester\Response\Response;
 use LessAbstractClient\Requester\Response\DataResponse;
 use LessAbstractClient\Requester\Response\EmptyResponse;
-use LessAbstractClient\Requester\Response\Response;
-use RuntimeException;
+use LessAbstractClient\Requester\Exception\FailedRequest;
 
 final class CurlRequester implements Requester
 {
@@ -19,6 +19,7 @@ final class CurlRequester implements Requester
     public function __construct(
         string $baseUri,
         private readonly ?Authorizer $authorizer = null,
+        private readonly ?string $build = null,
     ) {
         $this->baseUri = rtrim($baseUri, '/');
     }
@@ -74,6 +75,10 @@ final class CurlRequester implements Requester
         if ($data !== null) {
             curl_setopt($curlHandle, CURLOPT_POSTFIELDS, json_encode($data, JSON_THROW_ON_ERROR));
             $headers[] = 'Content-Type: application/json';
+        }
+
+        if ($this->build) {
+            $headers[] = "x-headers: {$this->build}";
         }
 
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);

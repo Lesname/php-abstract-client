@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Exception;
+namespace LessAbstractClient\Requester\Exception;
 
 use Exception;
 
