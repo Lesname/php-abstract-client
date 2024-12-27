@@ -31,9 +31,10 @@ final class CurlRequesterBuilder implements RequesterBuilder
             $authorizer = null;
         }
 
-        return new CurlRequester(
-            $config['baseUri'],
-            $authorizer,
-        );
+        $build = isset($config['build']) && is_string($config['build'])
+            ? $config['build']
+            : null;
+
+        return new CurlRequester($config['baseUri'], $authorizer, $build);
     }
 }
