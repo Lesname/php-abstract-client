@@ -38,7 +38,6 @@ final class CurlRequester implements Requester
         }
 
         $responseCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
-        assert(is_int($responseCode));
 
         if ((int)floor($responseCode / 100) !== 2) {
             throw new FailedRequest($responseCode, $responseData);
