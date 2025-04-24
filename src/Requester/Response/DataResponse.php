@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester\Response;
+namespace LesAbstractClient\Requester\Response;
+
+use Override;
 
 /**
  * @psalm-immutable
@@ -13,11 +15,13 @@ final class DataResponse implements Response
         private readonly mixed $data,
     ) {}
 
+    #[Override]
     public function getCode(): int
     {
         return $this->code;
     }
 
+    #[Override]
     public function getData(): mixed
     {
         return $this->data;

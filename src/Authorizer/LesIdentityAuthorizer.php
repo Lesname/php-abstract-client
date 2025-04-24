@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer;
+namespace LesAbstractClient\Authorizer;
 
-use LessAbstractClient\Requester\Requester;
+use Override;
+use LesAbstractClient\Requester\Requester;
 use RuntimeException;
 
-final class LessIdentityAuthorizer implements Authorizer
+final class LesIdentityAuthorizer implements Authorizer
 {
     public function __construct(
         private readonly Requester $requester,
@@ -14,6 +15,7 @@ final class LessIdentityAuthorizer implements Authorizer
         private readonly string $secret,
     ) {}
 
+    #[Override]
     public function getAuthorization(): string
     {
         $response = $this

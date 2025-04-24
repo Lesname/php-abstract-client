@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester\Builder;
+namespace LesAbstractClient\Requester\Builder;
 
-use LessAbstractClient\Requester\Requester;
+use LesAbstractClient\Requester\Requester;
 use Psr\Container\ContainerInterface;
 
 interface RequesterBuilder

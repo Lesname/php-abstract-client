@@ -1,15 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer\Builder;
+namespace LesAbstractClient\Authorizer\Builder;
 
-use LessAbstractClient\Authorizer\Authorizer;
-use LessAbstractClient\Authorizer\LessIdentityAuthorizer;
-use LessAbstractClient\Requester\Builder\RequesterBuilder;
+use Override;
+use LesAbstractClient\Authorizer\Authorizer;
+use LesAbstractClient\Authorizer\LesIdentityAuthorizer;
+use LesAbstractClient\Requester\Builder\RequesterBuilder;
 use Psr\Container\ContainerInterface;
 
-final class LessIdentityAuthorizerBuilder implements AuthorizerBuilder
+final class LesIdentityAuthorizerBuilder implements AuthorizerBuilder
 {
+    #[Override]
     public function build(ContainerInterface $container, array $config): Authorizer
     {
         assert(is_array($config['requester']));
@@ -29,7 +31,7 @@ final class LessIdentityAuthorizerBuilder implements AuthorizerBuilder
         $secret = file_get_contents($config['secretFile']);
         assert(is_string($secret));
 
-        return new LessIdentityAuthorizer(
+        return new LesIdentityAuthorizer(
             $requester,
             $id,
             $secret,
