@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester\Builder;
+namespace LesAbstractClient\Requester\Builder;
 
-use LessAbstractClient\Authorizer\Builder\AuthorizerBuilder;
-use LessAbstractClient\Requester\CurlRequester;
-use LessAbstractClient\Requester\Requester;
+use Override;
+use LesAbstractClient\Authorizer\Builder\AuthorizerBuilder;
+use LesAbstractClient\Requester\CurlRequester;
+use LesAbstractClient\Requester\Requester;
 use Psr\Container\ContainerInterface;
 
 final class CurlRequesterBuilder implements RequesterBuilder
@@ -13,6 +14,7 @@ final class CurlRequesterBuilder implements RequesterBuilder
     /**
      * @param array<mixed> $config
      */
+    #[Override]
     public function build(ContainerInterface $container, array $config): Requester
     {
         assert(is_string($config['baseUri']));

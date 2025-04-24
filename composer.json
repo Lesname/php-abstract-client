@@ -1,12 +1,12 @@
 {
-  "name": "lessname/abstract-client",
+  "name": "lesname/abstract-client",
   "license": "MIT",
   "require": {
     "php": "^8.4.0",
 
     "ext-curl": "*",
 
-    "lessname/cache": "^0.3.0",
+    "lesname/cache": "^0.4.0",
 
     "psr/container": "^2.0.2"
   },
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "LessAbstractClient\\": "src/"
+      "LesAbstractClient\\": "src/"
     }
   }
 }

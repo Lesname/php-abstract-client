@@ -1,16 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester;
+namespace LesAbstractClient\Requester;
 
+use Override;
 use CurlHandle;
 use JsonException;
 use RuntimeException;
-use LessAbstractClient\Authorizer\Authorizer;
-use LessAbstractClient\Requester\Response\Response;
-use LessAbstractClient\Requester\Response\DataResponse;
-use LessAbstractClient\Requester\Response\EmptyResponse;
-use LessAbstractClient\Requester\Exception\FailedRequest;
+use LesAbstractClient\Authorizer\Authorizer;
+use LesAbstractClient\Requester\Response\Response;
+use LesAbstractClient\Requester\Response\DataResponse;
+use LesAbstractClient\Requester\Response\EmptyResponse;
+use LesAbstractClient\Requester\Exception\FailedRequest;
 
 final class CurlRequester implements Requester
 {
@@ -28,6 +29,7 @@ final class CurlRequester implements Requester
      * @throws FailedRequest
      * @throws JsonException
      */
+    #[Override]
     public function post(string $path, mixed $data): Response
     {
         $curlHandle = $this->createCurlHandle($path, $data);

@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer;
+namespace LesAbstractClient\Authorizer;
 
+use Override;
 use Psr\SimpleCache\CacheInterface;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -20,6 +21,7 @@ final class CacheAuthorizer implements Authorizer
      *
      * @psalm-suppress MixedAssignment
      */
+    #[Override]
     public function getAuthorization(): string
     {
         $authorization = $this->cache->get($this->key);

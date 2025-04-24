@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer\Builder;
+namespace LesAbstractClient\Authorizer\Builder;
 
-use LessAbstractClient\Authorizer\Authorizer;
+use LesAbstractClient\Authorizer\Authorizer;
 use Psr\Container\ContainerInterface;
 
 interface AuthorizerBuilder

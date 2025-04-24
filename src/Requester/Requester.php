@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester;
+namespace LesAbstractClient\Requester;
 
-use LessAbstractClient\Requester\Response\Response;
+use LesAbstractClient\Requester\Response\Response;
 
 interface Requester
 {

@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer\Builder;
+namespace LesAbstractClient\Authorizer\Builder;
 
-use LessAbstractClient\Authorizer\Authorizer;
-use LessAbstractClient\Authorizer\CacheAuthorizer;
+use Override;
+use LesAbstractClient\Authorizer\Authorizer;
+use LesAbstractClient\Authorizer\CacheAuthorizer;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -18,6 +19,7 @@ final class CacheAuthorizerBuilder implements AuthorizerBuilder
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
+    #[Override]
     public function build(ContainerInterface $container, array $config): Authorizer
     {
         assert(is_array($config['proxy']));

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Authorizer;
+namespace LesAbstractClient\Authorizer;
 
 interface Authorizer
 {

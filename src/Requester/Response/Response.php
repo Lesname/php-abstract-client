@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace LessAbstractClient\Requester\Response;
+namespace LesAbstractClient\Requester\Response;
 
 /**
  * @psalm-immutable
